@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int filas = 2;
+	int columnas = 3;
+	
+	int i;
+	int j;
+	int *matriz = NULL;
+	
+	matriz = new int[filas * columnas];
+	
+	for (i =0; i<filas; i++){
+		for(j=0; j<columnas; j++){
+			matriz[i * columnas + j] = (i + 1) * 10 + j;
+		}
+	}
+	
+	for(i=0; i<filas; i++){
+		for(j=0; j<columnas; j++){
+			cout<< matriz[i * columnas + j]<< " ";
+		}
+		cout<<endl;
+	}
+	
+	delete[] matriz;
+	
+	matriz = NULL;
+	return 0;
+}
