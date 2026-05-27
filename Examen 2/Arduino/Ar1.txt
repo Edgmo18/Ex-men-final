@@ -1,1 +1,19 @@
+const int PIN_POTENCIOMETRO = 34; 
 
+void setup() {
+  /* Iniciamos la comunicación serial a 115200 baudios (estándar en ESP32). */
+  Serial.begin(9600);
+}
+
+void loop() {
+  /* Leemos el valor analógico del potenciómetro.
+     En ESP32, analogRead entrega un valor entre 0 y 4095. */
+  int valorADC = analogRead(PIN_POTENCIOMETRO);
+  
+  /* Mostramos el valor leído. */
+  Serial.print("ADC = ");
+  Serial.println(valorADC);
+  
+  /* Pausa corta para no saturar el Monitor Serial. */
+  delay(500); 
+}
